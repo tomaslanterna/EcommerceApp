@@ -8,7 +8,7 @@ const ItemList = ({products}) => {
                 <Item product={product}/>
             ))}
         </View>
-    )
+    );
 }
 
 export default ItemList

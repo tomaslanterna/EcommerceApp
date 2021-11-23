@@ -1,22 +1,17 @@
 import React from 'react';
-import {NavegationContainer} from '@react-navigation/native';
-import { createNativeStackNavigator} from '@react-navigation/native-stack';
-
-import AwesomeIcon from 'react-native-vector-icons/FontAwesome';
-import ItemListContainer from '../components/ItemListContainer';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen';
 
-const Stack=createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
 
-const ShopNavigator = () => (
-   <NavegationContainer>
-        <Stack.Navigator initialRouteName="Home">
-            <Stack.Screen name="Home" component={HomeScreen}/>
-            <Stack.Screen name="Products" component={ItemListContainer}/>
+const ShopNavigator = () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name="Home" component={HomeScreen} />
         </Stack.Navigator>
-    </NavegationContainer>
-);
+    )
+}
 
 
 export default ShopNavigator;

@@ -1,8 +1,7 @@
 import React,{useEffect} from 'react';
 import { View,Text,Image,StyleSheet} from 'react-native';
 import ItemList from './ItemList';
-import { getData } from '../firebase';
-import { collection, getDocs, query, where } from '@react-native-firebase/app';
+
 
 const productos = [
   { title: 'Play Station 5', price: 1200, imgUrl: "", details: "Increible Video consola para jugar con la banda unos fifas y unas nba 2k", categoryId: "1", stock: 4 },
