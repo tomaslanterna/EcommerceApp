@@ -43,9 +43,6 @@ const ItemListContainer = () => {
     useEffect(() => {
       setProducts(productos);
     }, [])
-
-
-
     {/*useEffect(() => {
       const getProducts=async()=>{
         const db=getData();

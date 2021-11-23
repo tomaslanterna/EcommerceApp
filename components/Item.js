@@ -19,8 +19,8 @@ const Item = ({ product }) => {
                     <View style={styles.product}>
                         <Image
                         style={styles.image}
-                        source={{uri:product.image}}/>
-                        <Text style={styles.text} numberOfLines={1} ellipsizeMode="tail">
+                        source={{uri:product.imgUrl}}/>
+                        <Text numberOfLines={1} ellipsizeMode="tail">
                             {product.title}
                         </Text>
                     </View>
