@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { View,Button} from 'react-native';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation,route}) => {
     return (
-        <div>
-            
-        </div>
+        <View>
+            <Button onPress={()=>{navigation.navigate('Products')}} title='Ver Productos'/>
+        </View>
     )
 }
 
