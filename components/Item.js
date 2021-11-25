@@ -12,7 +12,6 @@ const Item = ({ product }) => {
 
   };
   return (
-    <>
       <TouchableWithoutFeedback
         key={product.id}
         onPress={() => goToProduct(product.id)}>
@@ -21,13 +20,12 @@ const Item = ({ product }) => {
             <Image
               style={styles.image}
               source={{ uri: product.imgUrl }} />
-            <Text numberOfLines={1} ellipsizeMode="tail">
+            <Text style={styles.name} numberOfLines={1} ellipsizeMode="tail">
               {product.title}
             </Text>
           </View>
         </View>
       </TouchableWithoutFeedback>
-    </>
   );
 }
 
@@ -37,6 +35,7 @@ const styles = StyleSheet.create({
   containerProduct: {
     width: "50%",
     padding: 3,
+    marginBottom:5
   },
   product: {
     backgroundColor: "#f0f0f0",

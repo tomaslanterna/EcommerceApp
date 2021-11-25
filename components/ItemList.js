@@ -1,12 +1,19 @@
 import React from 'react';
-import { View,StyleSheet} from 'react-native';
+import { View,StyleSheet, FlatList, ScrollView} from 'react-native';
+import Item from './Item';
 
 const ItemList = ({products}) => {
     return (
         <View style={styles.container}>
-            {map(products,(product)=>(
-                <Item product={product}/>
-            ))}
+            {/*<FlatList
+            data={products}
+            keyExtractor={item=>item.id}
+            renderItem={({item})=>(
+                <Item product={item}/>
+            )}/>*/}
+            {products.map(prod=>
+                <Item product={prod} key={prod.id}/>
+            )}
         </View>
     );
 }
