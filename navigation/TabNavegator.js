@@ -13,6 +13,7 @@ const TabNavegator = () => {
         <BottomTabs.Navigator
             initialRouteName="ShopTab"
             screenOptions={{
+                tabBarStyle: styles.tabBar,
                 headerShown: false,
                 tabBarShowLabel: false,
             }}>
@@ -22,7 +23,7 @@ const TabNavegator = () => {
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View styles={styles.item}>
-                            <AwesomeIcon name="home" color={focused? 'red':'black'}/>
+                            <AwesomeIcon name="home" color={focused? 'red':'black'} size={25} style={styles.icon}/>
                             <Text>Home</Text>
                         </View>
                     )
@@ -34,7 +35,7 @@ const TabNavegator = () => {
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View styles={styles.item}>
-                            <AwesomeIcon name="bars" color={focused? 'red':'black'}/>
+                            <AwesomeIcon name="user-circle" color={focused? 'red':'black'} size={25} style={styles.icon}/>
                             <Text>Profile</Text>
                         </View>
                     )
@@ -47,7 +48,7 @@ const TabNavegator = () => {
                     tabBarIcon:
                         ({ focused }) => (
                             <View styles={styles.item}>
-                                <AwesomeIcon name="shopping-cart" color={focused? 'red':'black'}/>
+                                <AwesomeIcon name="shopping-cart" color={focused? 'red':'black'} size={25} style={styles.icon}/>
                                 <Text>Cart</Text>
                             </View>
                         )
@@ -64,15 +65,19 @@ const styles = StyleSheet.create({
         left: 20,
         right: 20,
         borderRadius: 15,
-        height: 200,
-        shadowColor: '#7f5df0',
+        height: 60,
+        shadowColor:'#ff5733',
         shadowOffset: { width: 0, height: 10 },
         shadowOpacity: 0.25,
         shadowRadius: 0.25,
         elevation: 5
     },
     item: {
-        fontSize:10
+        display:"flex"
+    },
+    icon:{
+        textAlign:"center",
+        margin:0
     }
 });
 
