@@ -8,7 +8,6 @@ const Search = () => {
     return (
         <Searchbar
         placeholder="Type here..."
-        color={'black'}
         style={styles.searchBar}/>
     )
 }
@@ -18,5 +17,7 @@ export default Search
 const styles= StyleSheet.create({
     searchBar:{
         position:'absolute',
+        width:"100%",
+        height:50
     }
 })

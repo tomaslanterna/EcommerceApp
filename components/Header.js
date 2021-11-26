@@ -1,14 +1,19 @@
 import React from 'react'
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Appbar } from 'react-native-paper';
 
 const Header = () => {
     return (
-        <Appbar.Header dark={true}>
+        <Appbar.Header style={styles.col}>
             <Appbar.Content title="Ecommerce"/>
-            <Appbar.Action/>
         </Appbar.Header>
     )
 }
 
 export default Header
+
+const styles=StyleSheet.create({
+    col:{
+        color:"#000000"
+    }
+})

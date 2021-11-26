@@ -3,9 +3,10 @@ import { useNavigation } from '@react-navigation/native';
 import { View, Text, Image, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { selectProduct } from '../store/actions/Product.action';
+import { Card } from 'react-native-paper';
 
 
-const Item = ({ product}) => {
+const Item = ({ product }) => {
 
 
   const dispatch = useDispatch();
@@ -27,14 +28,16 @@ const Item = ({ product}) => {
       key={product.id}
       onPress={() => goToProduct(product)}>
       <View style={styles.containerProduct}>
-        <View style={styles.product}>
-          <Image
-            style={styles.image}
-            source={{ uri: product.imgUrl }} />
-          <Text style={styles.name} numberOfLines={1} ellipsizeMode="tail">
-            {product.title}
-          </Text>
-        </View>
+        <Card style={styles.product}>
+          <View  >
+            <Image
+              style={styles.image}
+              source={{ uri: product.imgUrl }} />
+            <Text style={styles.name} numberOfLines={1} ellipsizeMode="tail">
+              {product.title}
+            </Text>
+          </View>
+        </Card>
       </View>
     </TouchableWithoutFeedback>
   );
