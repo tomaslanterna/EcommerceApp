@@ -1,9 +1,11 @@
 import React,{useEffect,useState} from 'react';
+import { useSelector,useDispatch} from 'react-redux';
 import { View,Text,StyleSheet} from 'react-native';
 import ItemList from './ItemList';
+import { selectProduct } from '../store/actions/Product.action';
 
 
-const productos = [
+/*const productos = [
   { id:1,title: 'Play Station 5', price: 1200, imgUrl: "https://firebasestorage.googleapis.com/v0/b/tiendaonline-ad1a6.appspot.com/o/JBL400BT.jpg?alt=media&token=e632b098-f39f-4971-bcb8-165ee75a48da", details: "Increible Video consola para jugar con la banda unos fifas y unas nba 2k", categoryId: "1", stock: 4 },
   { id:2,title: 'Play Station 4', price: 400, imgUrl: "https://firebasestorage.googleapis.com/v0/b/tiendaonline-ad1a6.appspot.com/o/JBL400BT.jpg?alt=media&token=e632b098-f39f-4971-bcb8-165ee75a48da", details: "Increible Video consola para jugar con la banda unos fifas y unas nba 2k", categoryId: "1" , stock: 6},
   { id:3,title: 'Play Station 3', price: 200, imgUrl: "https://firebasestorage.googleapis.com/v0/b/tiendaonline-ad1a6.appspot.com/o/JBL400BT.jpg?alt=media&token=e632b098-f39f-4971-bcb8-165ee75a48da", details: "Increible Video consola para jugar con la banda unos fifas y unas nba 2k", categoryId: "1", stock: 7 },
@@ -34,19 +36,23 @@ const productos = [
   { id:28,title: 'Pantalon Jean negro', price: 400, imgUrl: "https://firebasestorage.googleapis.com/v0/b/tiendaonline-ad1a6.appspot.com/o/JBL400BT.jpg?alt=media&token=e632b098-f39f-4971-bcb8-165ee75a48da", details: "Increible Video consola para jugar con la banda unos fifas y unas nba 2k", categoryId: "3", stock: 4 },
   { id:29,title: 'Zapatillas skate Nike', price: 200, imgUrl: "https://firebasestorage.googleapis.com/v0/b/tiendaonline-ad1a6.appspot.com/o/JBL400BT.jpg?alt=media&token=e632b098-f39f-4971-bcb8-165ee75a48da", details: "Increible Video consola para jugar con la banda unos fifas y unas nba 2k", categoryId: "3", stock: 2 },
   { id:30,title: 'Gorro Snapback Nike', price: 100, imgUrl: "https://firebasestorage.googleapis.com/v0/b/tiendaonline-ad1a6.appspot.com/o/JBL400BT.jpg?alt=media&token=e632b098-f39f-4971-bcb8-165ee75a48da", details: "Increible Video consola para jugar con la banda unos fifas y unas nba 2k", categoryId: "3", stock: 6 }
-];
+];*/
 
 const ItemListContainer = () => {
-    const [products, setProducts] = useState(null);
+    const [productsList, setProductsList] = useState([]);
+    const dispatch=useDispatch();
+
+    const prods = useSelector(state => state.products.prod);
+
 
     useEffect(() => {
-      setProducts(productos);
-    }, [])
+      setProductsList(prods);
+    }, []);
 
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Nuevos Productos</Text>
-            {<ItemList products={productos}/>}
+            {<ItemList products={prods}/>}
         </View>
     );
 }

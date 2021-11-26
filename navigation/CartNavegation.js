@@ -7,7 +7,7 @@ StackCarrito=createNativeStackNavigator();
 
 const CartNavegation=()=>{
     return(
-        <StackCarrito.Navigator>
+        <StackCarrito.Navigator screenOptions={{headerShown:false}}>
             <StackCarrito.Screen name="Cart" component={CartScreen}/>
         </StackCarrito.Navigator>
     )

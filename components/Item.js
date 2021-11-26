@@ -1,31 +1,42 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, Image, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { selectProduct } from '../store/actions/Product.action';
 
 
-const Item = ({ product }) => {
+const Item = ({ product}) => {
 
+
+  const dispatch = useDispatch();
   const navigation = useNavigation();
 
-  const goToProduct = (id) => {
-    navigation.push();
-
+  const goToProduct = (prod) => {
+    dispatch(selectProduct(prod.id));
+    navigation.navigate('ProductDetails', {
+      name: prod.title,
+      itemId: prod.id,
+      description: prod.details,
+      image: prod.imgUrl,
+      price: prod.price,
+      stock: prod.stock
+    });
   };
   return (
-      <TouchableWithoutFeedback
-        key={product.id}
-        onPress={() => goToProduct(product.id)}>
-        <View style={styles.containerProduct}>
-          <View style={styles.product}>
-            <Image
-              style={styles.image}
-              source={{ uri: product.imgUrl }} />
-            <Text style={styles.name} numberOfLines={1} ellipsizeMode="tail">
-              {product.title}
-            </Text>
-          </View>
+    <TouchableWithoutFeedback
+      key={product.id}
+      onPress={() => goToProduct(product)}>
+      <View style={styles.containerProduct}>
+        <View style={styles.product}>
+          <Image
+            style={styles.image}
+            source={{ uri: product.imgUrl }} />
+          <Text style={styles.name} numberOfLines={1} ellipsizeMode="tail">
+            {product.title}
+          </Text>
         </View>
-      </TouchableWithoutFeedback>
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
 
@@ -35,7 +46,7 @@ const styles = StyleSheet.create({
   containerProduct: {
     width: "50%",
     padding: 3,
-    marginBottom:5
+    marginBottom: 5
   },
   product: {
     backgroundColor: "#f0f0f0",
