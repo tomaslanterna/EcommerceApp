@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, Dimensions, ScrollView } from 'react-native';
 
 
+const width = Dimensions.get("window").width;
+const height = 400;
 const ItemDetails = ({ product }) => {
 
-    
+
 
     /* useEffect(() => {
          setProduct({
@@ -19,15 +21,10 @@ const ItemDetails = ({ product }) => {
      }, [])*/
 
     return (
-        <View>
-            <View style={styles.container}>
-                <Text>{product.title}</Text>
-                <Text>{product.id}</Text>
-                <Text>Hola</Text>
-                <Image source={{ uri: product.img }} style={StyleSheet.image} />
-            </View>
-
-        </View>
+        <ScrollView contentContainerStyle={styles.container}>
+            <Image source={{ uri: product.img }} style={styles.image} />
+            <Text style={styles.title}>{product.title}</Text>
+        </ScrollView>
     )
 }
 
@@ -35,13 +32,18 @@ export default ItemDetails
 
 const styles = StyleSheet.create({
     container: {
-        display: 'flex',
-        flexDirection: 'column',
-        textAlign: 'center',
-        margin: 100
+        display:"flex",
+        flexDirection:"column",
+        alignItems:"center",
+        margin:0
     },
     image: {
-        height: 150,
+        height: height,
+        width: width,
         resizeMode: "contain",
     },
+    title:{
+        fontSize:15,
+        fontWeight:"bold"
+    }
 });

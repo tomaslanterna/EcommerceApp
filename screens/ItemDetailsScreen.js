@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native'
 import ItemDetails from '../components/ItemDetails';
 import { Appbar } from 'react-native-paper';
 
-const ItemDetailsScreen = ({ route }) => {
+const ItemDetailsScreen = ({ route,navigation }) => {
 
     const [product, setProduct] = useState({
         title: route.params.name,
@@ -18,7 +18,8 @@ const ItemDetailsScreen = ({ route }) => {
         <View>
             <View style={styles.containerHeader}>
                 <Appbar.Header style={styles.header}>
-                    <Appbar.BackAction style={styles.subheader} />
+                    <Appbar.BackAction style={styles.subheader} onPress={()=>{navigation.goBack()}}/>
+                    <Appbar.Content style={styles.title} title={product.title}/>
                 </Appbar.Header>
             </View>
             <View>
@@ -33,13 +34,24 @@ export default ItemDetailsScreen
 
 const styles = StyleSheet.create({
     containerHeader:{
-        height:1,
-        margin:0
+       height:20,
+       marginBottom:15
     },
     header: {
-        height:"100%"
+        height:20,
+        display:"flex",
+        flexDirection:"row",
+        alignItems:"center",
+       backgroundColor:"#fff"
     },
     subheader: {
-        height:"100%"
+        height:20,
+        marginBottom:30,
+        width:50
+    },
+    title:{
+        height:30,
+        marginBottom:30,
+        width:50
     }
 });

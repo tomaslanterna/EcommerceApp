@@ -14,6 +14,6 @@ export default Header
 
 const styles=StyleSheet.create({
     col:{
-        color:"#000000"
+        backgroundColor:"#16222b"
     }
 })
