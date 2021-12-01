@@ -1,6 +1,8 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native';
 import { Appbar } from 'react-native-paper';
+import {COLOR} from '../constants/colors';
+
 
 const Header = () => {
     return (
@@ -14,6 +16,6 @@ export default Header
 
 const styles=StyleSheet.create({
     col:{
-        backgroundColor:"#16222b"
+        backgroundColor:COLOR.primary
     }
 })
