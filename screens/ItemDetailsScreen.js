@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import ItemDetails from '../components/ItemDetails';
 import { Appbar } from 'react-native-paper';
+import { COLORS } from '../constants/colors';
 
 const ItemDetailsScreen = ({ route,navigation }) => {
 
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
         display:"flex",
         flexDirection:"row",
         alignItems:"center",
-       backgroundColor:"#fff"
+       backgroundColor:COLORS.backyard
     },
     subheader: {
         height:20,

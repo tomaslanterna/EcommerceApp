@@ -5,6 +5,7 @@ import CartNavegation from './CartNavegation';
 import ShopNavigator from './ShopNavigator';
 import UserNavigation from './UserNavigation';
 import AwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import { COLORS } from '../constants/colors';
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
         right: 20,
         borderRadius: 15,
         height: 60,
-        shadowColor:'#ff5733',
+        shadowColor:COLORS.resalt,
         shadowOffset: { width: 0, height: 10 },
         shadowOpacity: 0.25,
         shadowRadius: 0.25,

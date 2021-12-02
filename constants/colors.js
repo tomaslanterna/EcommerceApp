@@ -1,4 +1,7 @@
 export const COLORS={
-    primary:'#16222b',
-    backyard:'#F5F5F5'
+    primary:'#1d3557',
+    secondary:'#457b9d',
+    thirdy:'a8dadc',
+    backyard:'#f1faee',
+    resalt:'#e63946',
 }
