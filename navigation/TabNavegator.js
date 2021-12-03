@@ -24,7 +24,7 @@ const TabNavegator = () => {
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View styles={styles.item}>
-                            <AwesomeIcon name="home" color={focused? 'red':'black'} size={25} style={styles.icon}/>
+                            <AwesomeIcon name="home" color={focused? COLORS.resalt:COLORS.primary} size={25} style={styles.icon}/>
                             <Text>Home</Text>
                         </View>
                     )
@@ -36,7 +36,7 @@ const TabNavegator = () => {
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View styles={styles.item}>
-                            <AwesomeIcon name="user-circle" color={focused? 'red':'black'} size={25} style={styles.icon}/>
+                            <AwesomeIcon name="user-circle" color={focused? COLORS.resalt:COLORS.primary} size={25} style={styles.icon}/>
                             <Text>Profile</Text>
                         </View>
                     )
@@ -49,7 +49,7 @@ const TabNavegator = () => {
                     tabBarIcon:
                         ({ focused }) => (
                             <View styles={styles.item}>
-                                <AwesomeIcon name="shopping-cart" color={focused? 'red':'black'} size={25} style={styles.icon}/>
+                                <AwesomeIcon name="shopping-cart" color={focused? COLORS.resalt:COLORS.primary} size={25} style={styles.icon}/>
                                 <Text>Cart</Text>
                             </View>
                         )
