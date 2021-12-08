@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react';
 import { useSelector,useDispatch} from 'react-redux';
 import { View,Text,StyleSheet} from 'react-native';
 import ItemList from './ItemList';
+import { URL_API } from '../constants/database';
 
 
 
@@ -13,6 +14,28 @@ const ItemListContainer = () => {
 
 
     useEffect(() => {
+      return async dispatch=>{
+        try {
+          const response= await fetch(`${URL_API}/products.json`,{
+            headers:{
+              'Content-Type':'application/json',
+            },
+          });
+
+          const result=await response.json();
+          const products=Object.keys(result).map(key=>({
+            ...result[key],
+            id:key,
+          }));
+          console.log(result);
+
+          dispatch({
+            
+          })
+        } catch (error) {
+          
+        }
+      }
       setProductsList(prods);
     }, []);
 

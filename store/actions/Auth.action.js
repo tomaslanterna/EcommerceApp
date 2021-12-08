@@ -1,7 +1,7 @@
 export const SIGN_UP='SIGN_UP';
 import { SIGN_UP_URL } from "../../constants/database";
 
-export const signUo=(email,password)=>{
+export const signUp=(email,password)=>{
     return async dispatch=>{
         try {
 
