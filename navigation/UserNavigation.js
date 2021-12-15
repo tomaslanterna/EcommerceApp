@@ -7,7 +7,7 @@ const UserStack = createNativeStackNavigator();
 
 const UserNavigation = () => {
 
-    const user = null;
+    const user = true;
 
     return (
         <UserStack.Navigator screenOptions={{ headerShown: false }}>

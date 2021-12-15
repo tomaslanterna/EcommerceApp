@@ -21,7 +21,7 @@ export const confirmCart = (payload, total) => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body=JSON.stringify({
+                body:JSON.stringify({
                     date: Date.now(),
                     items: payload,
                     total,

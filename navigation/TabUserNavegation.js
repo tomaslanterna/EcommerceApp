@@ -1,32 +1,39 @@
 import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { View,Text } from 'react-native';
+import { View, Text } from 'react-native';
+import SignUpScreen from '../screens/SignUpScreen';
+import SignInScreen from '../screens/SignInScreen';
+import { COLORS } from '../constants/colors';
 
-const UserTabs=createMaterialTopTabNavigator();
+const UserTabs = createMaterialTopTabNavigator();
 
 const TabUserNavegation = () => {
     return (
-        <UserTabs.Navigator>
+        <UserTabs.Navigator
+            screenOptions={{
+                headerShown: false,
+                tabBarShowLabel: false
+            }}>
             <UserTabs.Screen
-            name="SignUpTab"
-            component={}
-            options={{
-                tabBarIcon:({focused})=>(
-                    <View>
-                        <Text color={focused? COLORS.resalt:COLORS.primary}>SIGN UP</Text>
-                    </View>
-                )
-            }}/>
+                name="SignUp"
+                component={SignUpScreen}
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <View>
+                            <Text color={focused ? COLORS.resalt : COLORS.primary}>SIGN UP</Text>
+                        </View>
+                    )
+                }} />
             <UserTabs.Screen
-            name="LoginTab"
-            component={}
-            options={{
-                tabBarIcon:({focused})=>(
-                    <View>
-                        <Text color={focused? COLORS.resalt:COLORS.primary}>LOGIN</Text>
-                    </View>
-                )
-            }}/>
+                name="Login"
+                component={SignInScreen}
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <View>
+                            <Text color={focused ? COLORS.resalt : COLORS.primary}>LOGIN</Text>
+                        </View>
+                    )
+                }} />
         </UserTabs.Navigator>
     )
 }

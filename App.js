@@ -4,6 +4,7 @@ import Header from './components/Header';
 import MainNavegation from './navigation/MainNavegation';
 import store from './store';
 import { Provider } from 'react-redux';
+import {init} from './db';
 
 
 
